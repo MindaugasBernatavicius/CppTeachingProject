@@ -15,4 +15,11 @@ foreach (_variableName ${_variableNames})
 endforeach()
 
 #add_executable(cpp_project 1_simple_cli_apps/sleep_example_chrono.cpp)
-add_executable(cpp_project 2_algorithms/bubble_sort.cpp)
+#add_executable(cpp_project 3_algorithms/bubble_sort.cpp)
+#add_executable(cpp_project 2_pointers_and_references/pointers.cpp)
+
+#add_executable(cpp_project console_games/01_snake/snake.cpp)
+#add_executable(cpp_project console_games/02_tetris/tetris.cpp)
+#add_executable(cpp_project 1_simple_cli_apps/force_cmd_size.cpp)
+#add_executable(cpp_project cli_programs/open_console.cpp)
+add_executable(cpp_project cli_programs/1_lauch_console_with_any_size.cpp)
