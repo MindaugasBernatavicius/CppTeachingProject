@@ -31,6 +31,28 @@ class Person {
         }
 };
 
+class Animal {
+    private:
+        string name;
+        int weight;
+        
+    public:
+        string get_name(){ return name; }
+        void set_name(string name){ this->name = name; }
+        int get_weight(){ return weight; }
+        void set_weight(int weight){ this->weight = weight; }
+        Animal(string name, int weight){ this->name = name; this->weight = weight; }
+        ~Animal(){}
+
+        static bool compare_inc(Animal a1, Animal a2){
+            return (a1.weight == a2.weight || a1.weight > a2.weight) ? true : false;
+        }
+        
+        static bool compare_dec(Animal a1, Animal a2){
+            return (a1.weight == a2.weight || a1.weight < a2.weight) ? true : false;
+        }
+};
+
 class SortUtil {
     public:
         template<class T>
@@ -52,6 +74,8 @@ class SortUtil {
 };
 
 int main() {
+    
+    // 0. Example: sorting one type of object
     Person people[] = { 
         Person("Mindaugas", 30), 
         Person("Tadas", 37), 
@@ -71,6 +95,28 @@ int main() {
     cout << "\nAfter sorting: ";
     for(int i = 0; i < size; i++){
         cout << "{ " + people[i].get_name() + " is " + to_string(people[i].get_age()) + " }";
+    }
+    
+    // 1. Sorting another type of object
+    Animal zoo[] = { 
+        Animal("Tiger", 100000), 
+        Animal("Bear", 300000), 
+        Animal("Ant", 1)
+    };
+    
+    int size_zoo = sizeof(zoo)/sizeof(zoo[0]);
+    
+    cout << "\n\nBefore sorting: ";
+    for(int i = 0; i < size_zoo; i++){
+        cout << "{ " + zoo[i].get_name() + " is " + to_string(zoo[i].get_weight()) + " }";
+    }
+
+    SortUtil::bubble_sort_generic<Animal>(zoo, size_zoo, &Animal::compare_inc);
+    // SortUtil::bubble_sort_generic<Animal>(zoo, size_zoo, &Animal::compare_dec);
+    
+    cout << "\nAfter sorting: ";
+    for(int i = 0; i < size_zoo; i++){
+        cout << "{ " + zoo[i].get_name() + " is " + to_string(zoo[i].get_weight()) + " }";
     }
     
     return 0;
