@@ -29,7 +29,9 @@ int main() {
     // ... << - this symbols is the so called "insertion operator" - specifies the direction
     // ... where data will be put.
     // ... - "Hello world" is our data, the type of this data is string type (textual data).
-    std::cout << "Hello World";
+    // string s {"Hello World" } ; // different ways to initialize a variable
+    string s ("Hello World");
+    std::cout << s;
 
     // by convention we return 0 from main, when the program finishes sucessfully, else we return not 0   
     // 0 is of datatype "int" that is why main() has int as return parameter at the
