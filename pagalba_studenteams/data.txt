@@ -1,0 +1,4 @@
+Bosch,PonasBoschas,150,Berlynas,+3609992885
+Petrolium,PonasPetrolis,1500,Vasingtonas,+89252112555
+Petrolino,PonasPetrolis,1500,Vasingtonas,+89252112599
+Porshe,PonasPorshas,250,Frankfurtas,+111-1111

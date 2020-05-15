@@ -25,4 +25,12 @@ endforeach()
 #add_executable(cpp_project cli_programs/open_console.cpp)
 #add_executable(cpp_project cli_programs/1_lauch_console_with_any_size.cpp)
 #add_executable(cpp_project oop/main.cpp oop/Person.cpp oop/Person.hpp)
-add_executable(cpp_project 4_datastructures/vgtu/BinarySearchTree.cpp)
+
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/pagalba_studenteams/data.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+add_custom_target(copy-files ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/pagalba_studenteams
+        ${CMAKE_BINARY_DIR}/
+    )
+add_executable(cpp_project pagalba_studenteams/2020_05_14_verslo_partneriai.cpp)
+add_dependencies(cpp_project copy-files)
